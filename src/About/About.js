@@ -23,6 +23,14 @@ class About extends React.Component {
 					source: '2019 38th International Conference of the Chilean Computer Science Society (SCCC)',
 					reference: 'https://ieeexplore.ieee.org/document/8966411'
 				}
+			],
+			repos: [
+				{
+					full_name: 'mdotmonarch/mdotsite',
+					html_url: 'https://github.com/mdotmonarch/mdotsite',
+					description: "mdotmonarch's personal website",
+					created_at: "2021-03-13T19:33:52Z"
+				}
 			]
 		}
 	}
@@ -37,7 +45,7 @@ class About extends React.Component {
 							Hello there!
 						</div>
 						<div>
-							I'm <span class='AboutMagentaText'>Maximiliano Orellana</span>, a software developer currently studying civil informatics engineering.
+							I'm <span className='AboutMagentaText'>Maximiliano Orellana</span>, a software developer currently studying civil informatics engineering.
 							Here's a brief summary of who I am.
 						</div>
 					</Col>
@@ -66,15 +74,62 @@ class About extends React.Component {
 			)
 		}
 
+		const renderRepo = (repo) => {
+			const date = new Date(repo.created_at)
+			const dd = date.getDate()
+			const mm = date.getMonth()+1
+			const yyyy = date.getFullYear()
+			const hrs = date.getHours()
+			const min = date.getMinutes()
+			const sec = date.getSeconds()
+			const stringDate = mm+'-'+dd+'-'+yyyy+' '+hrs+':'+min+':'+sec
+			return (
+					<Row>
+						<Col>
+						<div className='AboutYellowText'>Name</div>
+						<a href={repo.html_url}>
+							{repo.full_name}
+						</a>
+						</Col>
+						<Col>
+						<div className='AboutMagentaText'>Description</div>
+							{repo.description}
+						</Col>
+						<Col>
+						<div className='AboutCyanText'>Created at</div>
+						{stringDate}
+						</Col>
+					</Row>
+			)
+		}
+
 		const renderRepos = () => {
-			
+			return (
+				<div>
+					<div className='AboutMagentaText'>Repos</div>
+					<div>
+						{
+							this.state.repos.map((repo) => {
+								return ( <div>{ renderRepo(repo) }</div> )
+							})
+						}
+					</div>
+				</div>
+			)
 		}
 
 		const renderAuthors = (authorList) => {
 			return authorList.map((author, index) => {
 				let optionalComma = (index === authorList.length-1) ? '' : ', '
 				if (author === 'Maximiliano Orellana') {
-					return ( <span> <span class='AboutMagentaText'> {author}</span>{optionalComma} </span>)
+					return (
+						<span>
+							<span className='AboutMagentaText'>
+								{author}
+							</span>
+							{optionalComma}
+						</span>
+					)
 				}
 				return (
 					author+optionalComma
