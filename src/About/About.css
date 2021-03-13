@@ -1,0 +1,27 @@
+.About {
+	margin-top: 100px;
+	margin-bottom: 60px;
+	text-align: left;
+	color: white;
+	justify-content: center;
+}
+
+.AboutMagentaText {
+	color: #de2877;
+}
+
+.AboutCyanText {
+	color: #3699ee;
+}
+
+.AboutYellowText {
+	color: #f8cd5d;
+}
+
+a {
+	color: #3699ee !important
+}
+
+a:hover {
+	text-decoration: none !important
+}

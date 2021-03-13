@@ -1,0 +1,35 @@
+.Home {
+	margin-top: 100px;
+	margin-bottom: 60px;
+	text-align: left;
+	color: white;
+	justify-content: center;
+}
+
+.HomeEnormousText {
+	font-size: 300%;
+}
+
+.HomeTitle {
+	font-size: 150%;
+}
+
+.HomeSubtitle {
+	font-size: 120%;
+}
+
+.HomeMult {
+	font-size: 140%;
+}
+
+.HomeLittleText {
+	font-size: 75%;
+}
+
+.HomeLittlerText {
+	font-size: 55%;
+}
+
+.HomeNormalText {
+	font-size: 100%;
+}
