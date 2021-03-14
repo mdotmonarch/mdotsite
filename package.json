@@ -2,13 +2,14 @@
 	"name": "mdotsite",
 	"author": "Maximiliano Orellana",
 	"license": "MIT",
-	"version": "1.0.1",
+	"version": "0.0.5",
 	"description": "mdotmonarch's personal website",
 	"private": true,
 	"dependencies": {
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.5.0",
 		"@testing-library/user-event": "^7.2.1",
+		"axios": "^0.21.1",
 		"bootstrap": "^4.5.3",
 		"react": "^16.14.0",
 		"react-bootstrap": "^1.4.0",
@@ -16,18 +17,13 @@
 		"react-router": "^5.2.0",
 		"react-router-dom": "^5.2.0",
 		"react-scripts": "^4.0.1",
-		"stl-viewer": "^0.12.0",
 		"styled-components": "^5.2.1"
 	},
 	"scripts": {
-		"preinstall": "npx npm-force-resolutions",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
-	},
-	"resolutions": {
-		"three": "0.126.1"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
