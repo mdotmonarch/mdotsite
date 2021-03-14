@@ -55,22 +55,27 @@ class About extends React.Component {
 
 		const renderInfo = () => {
 			return (
-				<Row>
-					<Col lg={true}>
-						<div className='AboutCyanText'>Skills</div>
-						Lua - Python - React - Vue.js - TypeScript -
-						Java - C# - LaTeX - Jenkins - Git
-					</Col>
-					<Col lg={true}>
-						<div className='AboutMagentaText'>Education</div>
-						Civil Informatics Engineering, USACH<br />
-						[2016-Present]
-					</Col>
-					<Col lg={true}>
-						<div className='AboutYellowText'>Interests</div>
-						3D modelling and printing - Photography - Web design - Academic research
-					</Col>
-				</Row>
+				<div>
+					<div className='AboutYellowText'>
+						Info
+					</div>
+					<Row>
+						<Col lg={true}>
+							<div className='AboutCyanText'>Skills</div>
+							Lua - Python - React - Vue.js - TypeScript -
+							Java - C# - LaTeX - Jenkins - Git
+						</Col>
+						<Col lg={true}>
+							<div className='AboutMagentaText'>Education</div>
+							Civil Informatics Engineering, USACH<br />
+							[2016-Present]
+						</Col>
+						<Col lg={true}>
+							<div className='AboutYellowText'>Interests</div>
+							3D modelling and printing - Photography - Web design - Academic research
+						</Col>
+					</Row>
+				</div>
 			)
 		}
 
@@ -86,7 +91,7 @@ class About extends React.Component {
 			return (
 					<Row>
 						<Col>
-						<div className='AboutYellowText'>Name</div>
+						<div className='AboutCyanText'>Name</div>
 						<a href={repo.html_url}>
 							{repo.full_name}
 						</a>
@@ -96,7 +101,7 @@ class About extends React.Component {
 							{repo.description}
 						</Col>
 						<Col>
-						<div className='AboutCyanText'>Created at</div>
+						<div className='AboutYellowText'>Created at</div>
 						{stringDate}
 						</Col>
 					</Row>
@@ -106,7 +111,7 @@ class About extends React.Component {
 		const renderRepos = () => {
 			return (
 				<div>
-					<div className='AboutMagentaText'>Repos</div>
+					<div className='AboutYellowText'>Repos</div>
 					<div>
 						{
 							this.state.repos.map((repo) => {

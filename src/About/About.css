@@ -19,9 +19,10 @@
 }
 
 a {
-	color: #3699ee !important
+	color: white !important
 }
 
 a:hover {
-	text-decoration: none !important
+	text-decoration: none !important;
+	color: #3699ee !important
 }

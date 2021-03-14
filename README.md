@@ -1,3 +1,3 @@
 ### mdotsite
 
-Personal website made with React
+mdotmonarch's personal website
