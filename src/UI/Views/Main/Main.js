@@ -1,9 +1,9 @@
 import React from 'react';
 import './Main.css';
 
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
-import About from '../About/About';
+import Navbar from '../../../UI/Components/Navbar/Navbar';
+import Footer from '../../../UI/Components/Footer/Footer';
+import Home from '../../../UI/Views/Home/Home';
 
 import {
 	BrowserRouter as Router,
@@ -21,14 +21,14 @@ class Main extends React.Component {
 		return (
 			<div className='Main'>
 				<Navbar />
-					<Router>
-						<Switch>
-							<Route path='/'>
-								<About />
-							</Route>
-						</Switch>
-					</Router>
-				<Footer />
+				<Router>
+					<Switch>
+						<Route path='/'>
+							<Home />
+						</Route>
+					</Switch>
+				</Router>
+			<Footer />
 			</div>
 		);
 	}

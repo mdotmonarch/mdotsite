@@ -1,4 +1,4 @@
-.About {
+.HomeView {
 	margin-top: 100px;
 	margin-bottom: 60px;
 	text-align: left;
@@ -6,15 +6,15 @@
 	justify-content: center;
 }
 
-.AboutMagentaText {
+.MagentaText {
 	color: #de2877;
 }
 
-.AboutCyanText {
+.CyanText {
 	color: #3699ee;
 }
 
-.AboutYellowText {
+.YellowText {
 	color: #f8cd5d;
 }
 
