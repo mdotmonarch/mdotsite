@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useRef } from 'react';
 import { theme } from '../theme';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Line } from '@react-three/drei';
+import { Line, OrbitControls } from '@react-three/drei';
 import { Line2 } from 'three-stdlib';
 import { Box } from '@chakra-ui/react';
 
@@ -10,7 +10,7 @@ const DT = 0.01;
 const SIGMA = 10;
 const RHO = 28;
 const BETA = 8 / 3;
-const PARTICLES = 25;
+const PARTICLES = 30;
 const PARTICLE_COLORS = [
 	theme.colors.mdot.magenta,
 	theme.colors.mdot.cyan,
@@ -30,6 +30,7 @@ const lorenzNextPoint = (point: [number, number, number]): [number, number, numb
 }
 
 var currentLinePoints = [] as [number, number, number][];
+
 for (let i = 0; i < PARTICLES; i++) {
 	currentLinePoints.push([10*(Math.random()-0.5), 10*(Math.random()-0.5), 10*(Math.random()-0.5)]);
 };
@@ -46,8 +47,8 @@ const LorenzAttractorCurrentLine = (params: {index: number, color: string}): JSX
 	return (
 		<Line
 			ref={lineRef}
-			rotation={[0, 0, -Math.PI/6]}
-			scale={0.1}
+			rotation={[-Math.PI/2, 0, Math.PI]}
+			scale={4}
 			points={[currentLinePoints[params.index], currentLinePoints[params.index]]}
 			color={params.color}
 			lineWidth={5}
@@ -57,8 +58,14 @@ const LorenzAttractorCurrentLine = (params: {index: number, color: string}): JSX
 
 export const LorenzAttractorComponent = (): JSX.Element => (
 	<Box>
-		<Canvas>
-			{Array.from(Array(PARTICLES).keys()).map((index) => ( <LorenzAttractorCurrentLine index={index} color={selectRandomColor()} /> ))}
+		<Canvas orthographic camera={{ position: [0, 0, -600] }}>
+			<Line scale={5} points={[[-1000, 0, 0], [1000, 0, 0]]} color={theme.colors.mdot.magenta}/>
+			<Line scale={5} points={[[0, -1000, 0], [0, 1000, 0]]} color={theme.colors.mdot.cyan}/>
+			<Line scale={5} points={[[0, 0, -1000], [0, 0, 1000]]} color={theme.colors.mdot.yellow}/>
+			<group position={[0, -100, 0]}>
+				{Array.from(Array(PARTICLES).keys()).map((index) => ( <LorenzAttractorCurrentLine index={index} color={selectRandomColor()} /> ))}
+			</group>
+			<OrbitControls makeDefault />
 		</Canvas>
 	</Box>
 );
