@@ -16,10 +16,10 @@ export const CardComponent = (params: CardComponentParams) => (
 		bg='mdot.bluelight'
 		borderRadius={5}
 	>
-		<Text color={params.title_color} textAlign={params.title_align}>
+		<Text color={params.title_color} fontWeight='bold' textAlign={params.title_align}>
 			{params.title}
 		</Text>
-		<Text pt='2' fontSize='xs'>
+		<Text pt='2' fontSize='xs' textAlign='justify'>
 			{params.content}
 		</Text>
 	</Box>

@@ -1,6 +1,6 @@
 export const theme = {
 	fonts: {
-		body: 'Fira Mono, monospace',
+		body: 'Helvetica',
 	},
 	colors: {
 		mdot: {
