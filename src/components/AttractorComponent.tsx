@@ -4,10 +4,10 @@ import { theme } from '../theme';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Line, OrbitControls } from '@react-three/drei';
 import { Line2 } from 'three-stdlib';
-import { Box, Text } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { Attractor } from '../assets/attractors';
 
-const PARTICLES = 25;
+const PARTICLES = 10;
 const PARTICLE_COLORS = [
 	theme.colors.mdot.magenta,
 	theme.colors.mdot.cyan,
