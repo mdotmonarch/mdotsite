@@ -10,6 +10,23 @@ export type Attractor = {
 	}
 }
 
+export const lorenz: Attractor = {
+	title: 'Lorenz attractor',
+	subtitle: '(ς=10, ρ=28, β=8/3)',
+	constants: [10, 28, 8/3],
+	function: (p: [number, number, number], c: number[]): [number, number, number] => [
+		p[0] + (c[0]*(p[1]-p[0])) * 0.01,
+		p[1] + (p[0]*(c[1]-p[2]) - p[1]) * 0.01,
+		p[2] + (p[0] * p[1] - (c[2] * p[2])) * 0.01
+	],
+	camera: {
+		scale: 1,
+		position: [0, 0, -10],
+		rotation: [0, 0, 0]
+	}
+}
+
+/*
 export const aizawa: Attractor = {
 	title: 'Aizawa attractor',
 	subtitle: '(a=0.95, b=0.7, c=0.65, d=3.5, e=0.25, f=0.1)',
@@ -42,22 +59,6 @@ export const thomas: Attractor = {
 	}
 }
 
-export const lorenz: Attractor = {
-	title: 'Lorenz attractor',
-	subtitle: '(ς=10, ρ=28, β=8/3)',
-	constants: [10, 28, 8/3],
-	function: (p: [number, number, number], c: number[]): [number, number, number] => [
-		p[0] + (c[0]*(p[1]-p[0])) * 0.01,
-		p[1] + (p[0]*(c[1]-p[2]) - p[1]) * 0.01,
-		p[2] + (p[0] * p[1] - (c[2] * p[2])) * 0.01
-	],
-	camera: {
-		scale: 3,
-		position: [0, -75, 0],
-		rotation: [-Math.PI/2, 0, Math.PI]
-	}
-}
-
 export const rucklidge: Attractor = {
 	title: 'Rucklidge attractor',
 	subtitle: '(k=2, a=6.7)',
@@ -73,3 +74,4 @@ export const rucklidge: Attractor = {
 		rotation: [-Math.PI/2, 0, Math.PI]
 	}
 }
+*/

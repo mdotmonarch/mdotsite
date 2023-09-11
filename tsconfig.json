@@ -1,13 +1,18 @@
 {
 	"compilerOptions": {
-		"jsx": "react",
+		"jsx": "react-jsx",
 		"module": "commonjs",
 		"noImplicitAny": true,
 		"outDir": "./build/",
 		"preserveConstEnums": true,
 		"removeComments": true,
 		"sourceMap": true,
-		"target": "es5"
+		"target": "es6",
+		"esModuleInterop": true,
+		"lib": [
+			"es2018",
+			"DOM"
+		]
 	},
 	"include": [
 		"src/index.tsx"

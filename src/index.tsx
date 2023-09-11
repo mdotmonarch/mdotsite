@@ -1,10 +1,9 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as ReactDOMClient from 'react-dom/client';
 import { extendTheme } from '@chakra-ui/react';
 
 // React-Router
 import {
-	BrowserRouter,
+	BrowserRouter as Router,
 	Routes,
 	Route
 } from 'react-router-dom';
@@ -12,23 +11,21 @@ import {
 // Chakra-UI
 import { ChakraProvider } from '@chakra-ui/react';
 
-// Components
-import { NavbarComponent } from './components/NavbarComponent';
-
 // Views
 import { HomeView } from './views/HomeView';
 
 // Custom theme
 import { theme } from './theme';
 
-ReactDOM.render(
+// create root 
+const root = ReactDOMClient.createRoot(document.getElementById('root'));
+
+root.render(
 	<ChakraProvider theme={ extendTheme(theme) }>
-		<NavbarComponent/>
-		<BrowserRouter>
+		<Router>
 			<Routes>
-				<Route path='/' element={<HomeView />} />	
+				<Route path='/' element={<HomeView />} />
 			</Routes>
-		</BrowserRouter>
+		</Router>
 	</ChakraProvider>
-	, document.querySelector('#root')
 );

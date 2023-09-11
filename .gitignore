@@ -12,3 +12,6 @@ files
 icons
 images
 package-lock.json
+.vscode
+bun.lockb
+out
